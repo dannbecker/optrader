@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
+    <script src="js/script.js" async></script>
+    <title>Calculadora de Porcentagem</title>
+</head>
+
+<body class="bodyScroll">
+    <div class="divMenuTopo">
+        <div class="divMenuTop">
+            <div class="divImagem">
+                <table>
+                    <tr>
+                        <td><a href="index.html"><img src="img/logo.png" alt="logo Optrader" class="imgLogo" ></a></td>
+                        <td><p class="tituloPrincipal">O site do trader do mercado de opções</p></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="container-fluid" id="cabecalho">
+            <div class="container-fluid" id="tituloCabecalho"><h3>Calculadora de Porcentagem</h3></div>
+        </div>
+        <div class="container-fluid" id="corpo">
+            <div class="container-fluid" id="textoIntro">
+                <p id="p1">A calculadora de porcentagem permite realizar a verificação de lucros e prejuízos e de variação percentual, para mais ou para menos, de um determinado valor. <br>Abaixo, estão localizadas as três opções. </p>
+            </div>
+            <div class="container-fluid" id="blackBar">.</div>
+            
+<!----------------------------------------------- CALCULAR AUMENTO PERCENTUAL ---------------------------------------------!-->   
+            
+            <div class="container-fluid" id="alinharConteudo">
+                <div class="control-group">
+                    <p class="input-label">Calcular o <b>AUMENTO</b> de:</p>
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <input class="span2" id="inputPercentualAumentar" type="number" step=".01">
+                                <span class="add-on"><i><img src="img/percent-icon.png" height="20px" width="20px"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="input-label">Sobre o preço de:</p>
+                    <div class="control-group" style="float: left" >
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <input class="span2" id="inputPrecoAumentar" type="number" step=".01">
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="control-group" style="float: left">
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <button class="inputBtn" id="aumentar" onclick="aumentoValor()">Calcular</button>
+                                <input class="span2" id="resultAumentar" type="text" disabled>
+                            </div>
+                        </div>
+                    </div>                     
+                </div>
+            </div> 
+            
+<!----------------------------------------------- CALCULAR DIMINUIÇÃO PERCENTUAL ---------------------------------------------!-->            
+            
+            <div class="container-fluid" id="alinharConteudo">
+                <div class="container-fluid" id="blackSmallBar" style="margin-left: -10%">.</div>
+            </div>
+            <div class="container-fluid" id="alinharConteudo">
+                <div class="control-group">
+                    <p class="input-label">Calcular a <b>DIMINUIÇÃO</b> de:</p>
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <input class="span2" id="inputPercentualDiminuir" type="number" step=".01">
+                                <span class="add-on"><i><img src="img/percent-icon.png" height="20px" width="20px"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="input-label">Sobre o preço de:</p>
+                    <div class="control-group" style="float: left" >
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <input class="span2" id="inputPrecoDiminuir" type="number" step=".01">
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="control-group" style="float: left">
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <button class="inputBtn" id="diminuir" onclick="diminuicaoValor()">Calcular</button>
+                                <input class="span2" id="resultDiminuir" type="text" disabled>
+                            </div>
+                        </div>
+                    </div>                     
+                </div>
+            </div>  
+            
+<!------------------------------------------- CALCULAR VARIAÇÃO % DO PREÇO  -----------------------------------------!-->   
+            
+            <div class="container-fluid" id="alinharConteudo">
+                <div class="container-fluid" id="blackSmallBar" style="margin-left: -10%">.</div>
+            </div>
+            <div class="container-fluid" id="alinharConteudo">
+                <div class="control-group">
+                    <p class="input-label">O preço de:</p>
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <input class="span2" id="inputValor1" type="number" step=".01">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="input-label">Que <b>ALTEROU</b> para:</p>
+                    <div class="control-group" style="float: left" >
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <input class="span2" id="inputValor2" type="number" step=".01">
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="control-group" style="float: left">
+                        <p class="input-label">Variou:</p>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <button class="inputBtn" id="variaPercentual" onclick="variacaoPercentual()">Calcular</button>
+                                <input class="span2" id="resultVariaPercentual" type="text" disabled style="width: 95px">
+                                <span class="add-on"><i><img src="img/percent-icon.png" height="20px" width="20px"></i></span>
+                            </div>
+                        </div>
+                    </div>                     
+                </div>
+            </div>    
+                 
+            <div class="container-fluid" id="blackBar">.</div>
+                <p><center>Daniel Becker Bortoluzzi | BSI18</center></p>
+            <div class="container-fluid" id="blackBar">.</div>
+        </div>
+        <button onclick="topFunction()" id="btnTopo" title="Go to top"><img src="img/up-arrow-icon.png"></button>
+    </div>
+    <div class="divEscurecer" id="escurecer">.</div>
+    <div class="menuShow" id="menuShow">
+        <div class="divTopo" id="topo"></div>
+        <div class="divMeio" id="meio"></div>
+        <div class="divBaixo" id="baixo"></div>
+    </div>
+    <nav class="menuHide" id="menuHide">
+        <ul>
+            <div class="divCalculadoras">CALCULADORAS</div>
+            <a href="calcPreco.html"><li>Preço da opção</li></a>
+            <a href="porcentagem.html"><li>Porcentagem</li></a>
+        </ul>
+    </nav>
+</body>
+</html>

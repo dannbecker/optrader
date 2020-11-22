@@ -1,0 +1,413 @@
+/* Aplicável a todas as páginas, para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    color: #000;
+    
+}
+
+/* ---------------------------------------------------------- */
+/* Elementos contídos em todas as páginas (padrões de estilo) */
+/* ---------------------------------------------------------- */
+
+body {
+    padding-bottom: 90px;
+    background-color: #E8E8E8 !important;
+}
+
+.divPrincipal {
+    margin-top: 75px;
+}
+
+.fixarRodape {
+    background-color: #222326; 
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    position: fixed;
+    width: 100%;
+}
+
+.autor {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Rowdies', cursive;
+    
+}
+
+.divMenuTopo {
+    width: 100%;
+    height: 75px;
+    background-color: #222326;
+    position: fixed;
+    top: 0;
+}
+
+.divImagem {
+    height: 75px;
+}
+
+.imgLogo {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.tituloPrincipal {
+    font-family: 'Rowdies', cursive;
+    color: white;
+    margin-right: 60px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+#menuShow {
+    width: 35px;
+    height: 30px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 15px;
+    margin-right: 15px;
+    right:0;
+    cursor: pointer;
+    background: #4f5559;
+}
+
+/*#menuShow:hover {
+    background-color: black;
+}
+*/
+ 
+#topo, #meio, #baixo {
+    width: 35px;
+    height: 5px;
+    background: #222326 none repeat scroll 0% 0%;
+    margin-top: 5px;
+}
+
+/*#menuShow:hover ~ #topo, #menuShow:hover ~ #meio, #menuShow:hover ~ #baixo {
+    background-color: yellow;
+}
+*/
+
+.separador-menu {
+    background-color: #727475;
+    color: #727475;
+    font-size: 0px;
+    height: 8px;
+    margin-left: -24px;
+    margin-top: 110px;
+    
+}
+
+.menuHide {
+    background: #333 none repeat scroll 0% 0%;
+    width: 200px;
+    height: 400px;
+    position: fixed; 
+    box-shadow: 1px 2px 3px black;
+    left: -100%;
+    transition: left .5s;
+    }
+
+.menuHide ul {
+    position: absolute;
+    top: 31px;
+}
+
+.menuHide li {
+    color: #fff;
+    font-size: 20px;
+    padding: 18px;
+    margin-left: -24px;
+    cursor: fixed;
+    font-family: 'Rowdies', cursive;
+}
+
+
+.menuHide li:hover {
+    background-color: #1f2021;
+    margin-right: -2px;
+}
+
+.divCalculadoras {
+    height: 40px;
+    width: 190px;
+    background-color: #727475;
+    margin-left: -24px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 19px;
+    font-family: 'Rowdies', cursive;
+}
+
+.divEscurecer {
+    width: 100%;
+    height: 100%;
+    background-color: #00000099;
+    position: fixed;
+    top: -100%;
+    transition: top .5s;
+}
+
+#cabecalho {
+    margin-top: 10px;
+    margin-left: 18px;
+}
+
+#tituloCabecalho {
+    text-align: center;
+}
+
+#p1 {
+    text-align: center;
+}
+
+#p2 {
+    text-align: justify;
+}
+
+#blackBar {
+    height: 2px;
+    background-color: #222326;
+    margin-top: 2px;
+    margin-bottom: 18px;
+}
+
+#blackSmallBar {
+    height: 2px;
+    width: 100%;
+    background-color: #222326;
+    margin-top: 0px;
+    margin-bottom: 18px;
+    
+}
+
+#pAumento {
+    margin-top: 6px;
+    font-size: 16px;
+    margin-right: 6px;
+}
+
+#alinharConteudo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 20%;
+}
+
+#alinharConteudoRight {
+    
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-right: 10%;    
+    
+}
+
+.inputBtn {
+    background-color: #434344;
+    width: 80px;
+    color: white;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: none;
+    height: 30px;
+    margin-left: 6px;
+    transition-duration: 0.22s;
+    font-weight: bold;
+}
+
+.inputBtn:hover {
+    background-color: #222326;
+    transition-duration: 0.22s;
+    
+}
+
+#inputIcon {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#btnTopo { 
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 50px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #00000033; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
+
+#btnTopo:hover {
+  background-color: gray; /* Add a dark-grey background on hover */
+}
+
+/* ======================================== FIM ========================================  */
+
+/* ---------------------------------------------------------- */
+/* Elementos contídos conforme tamanho de largura da tela     */
+/* ---------------------------------------------------------- */
+
+@media only screen and (max-width: 1920px) {
+    .tituloPrincipal {
+        font-size: 1.6em;
+    }
+    .imgLogo {
+    width: 230px;
+    height: 65px;
+    }
+    
+    .input-label {
+    float: left;
+    margin: 5px;
+}
+
+.control-group {
+    float: left;
+}
+
+
+}
+
+@media only screen and (max-width: 785px) {
+    .tituloPrincipal {
+        font-size: 1.4em;
+    }
+    .imgLogo {
+    width: 210px;
+    height: 60px;
+    }
+    
+    .input-label {
+    float: left;
+    margin: 5px;
+}
+
+.control-group {
+    float: left;
+}
+
+}
+
+@media only screen and (max-width: 703px) {
+    .tituloPrincipal {
+        font-size: 1.2em;
+    }
+    
+    .imgLogo {
+    width: 200px;
+    height: 55px;
+    }
+    
+    .input-label {
+    float: none;
+    }
+    
+    .control-group {
+        float: none;
+    }
+    
+    .input-bs {
+        margin-left: 0px !important;
+    }
+       
+}
+    
+        }
+
+@media only screen and (max-width: 470px) {
+    .tituloPrincipal {
+        font-size: 1em;
+    }
+    
+    .imgLogo {
+    width: 190px;
+    height: 50px;
+    }
+    
+        }
+
+@media only screen and (max-width: 425px) {
+    .tituloPrincipal {
+        font-size: 0.7;
+    }
+    
+    .imgLogo {
+    width: 175px;
+    height: 45px;
+    }
+    
+        }
+
+@media only screen and (max-width: 407px) {
+    .tituloPrincipal {
+        font-size: 0.4;
+    }
+    
+    .imgLogo {
+    width: 160px;
+    height: 40px;
+    }
+    
+        }
+
+@media only screen and (max-width: 371px) {
+    .tituloPrincipal {
+        font-size: 0.2;
+    }
+    
+    .imgLogo {
+    width: 130px;
+    height: 40px;
+    }
+    
+        }
+
+/* ======================================== FIM ========================================  */
+
+/* --------------------------------------------- */
+/* Elementos contídos na página porcentagem.html */
+/* --------------------------------------------- */
+
+#inputPreco {
+    border-radius: 8px;
+    width: 160px;
+}
+
+
+
+/* ======================================== FIM ========================================  */
+
+
+/* --------------------------------------------- */
+/* Elementos contídos na página calcPreco.html */
+/* --------------------------------------------- */
+
+
+#p2 {
+    margin-left: 90px;
+}
+
+.control-group-bs {
+    align-content: flex-end;
+}
+
+
+/* ======================================== FIM ========================================  */

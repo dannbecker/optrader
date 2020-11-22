@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
+    <script src="js/script.js" async></script>
+    <title>Calculadora de Black-Scholes</title>
+</head>
+
+<body class="bodyScroll">
+    <div class="divPrincipal">
+        <div class="container-fluid" id="cabecalho">
+            <div class="container-fluid" id="tituloCabecalho"><h3>Calculadora de Precificação de Opções</h3></div>
+        </div>
+        <div class="container-fluid" id="corpo">
+            <div class="container-fluid" id="textoIntro">
+                <p id="p1">A calculadora de opções utiliza a <b>fórmula matemática de Black-Scholes</b> (Década de 70). A fórmula tende a precificar opções do tipo de negociação européia, dado alguns parâmetros que podem ser extraídos. </p>
+            </div>
+            <div class="container-fluid" id="blackBar">.</div>
+            
+            <div class="container-fluid" id="textoIntro">
+                <p id="p2">Entre com os parâmetros: </p>
+            </div>            
+            
+<!----------------------------------------------- CALCULAR AUMENTO PERCENTUAL ---------------------------------------------!-->   
+            
+            <p class="input-label">Selecione o tipo de opção:</p>
+            <div class="container-fluid" id="alinharConteudo">
+                <div class="control-group">
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-bs">
+                                <select id="tipoOpcao">
+                                    <option value="call">Call (compra)</option>
+                                    <option value="put">Put (venda)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>                      
+                </div>                 
+            </div>               
+            <p class="input-label">Strike (preço de exercício):</p>
+            <div class="container-fluid" id="alinharConteudo">
+                <div class="control-group">
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-bs">
+                                <input class="span2" id="inputStrike" type="number" step=".01">
+                            </div>
+                        </div>
+                    </div>                      
+                </div>                 
+            </div>
+            <p class="input-label">Preço da ação:</p>
+            <div class="container-fluid" id="alinharConteudo">
+                <div class="control-group">
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-bs">
+                                <input class="span2" id="inputAcao" type="number" step="0.1">
+                            </div>
+                        </div>
+                    </div>                      
+                </div>               
+            </div>   
+            <p class="input-label">Dias úteis até o vencimento da opção:</p>
+            <div class="container-fluid" id="alinharConteudo">
+                <div class="control-group">
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-bs">
+                                <input class="span2" id="inputVencimento" type="number" step="1" max="256">
+                            </div>
+                        </div>
+                    </div>                      
+                </div>                
+            </div>
+            <p class="input-label">Taxa de juros:</p>
+                <div class="container-fluid" id="alinharConteudo">
+                <div class="control-group">
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-bs">
+                                <input class="span2" id="inputJuros" type="number" step=".01">
+                            </div>
+                        </div>
+                    </div>                      
+                </div>               
+            </div>  
+            <p class="input-label">Taxa de dividendos:</p>
+            <div class="container-fluid" id="alinharConteudo">
+                <div class="control-group">
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-bs">
+                                <input class="span2" id="inputDividendos" type="number" step=".01">
+                            </div>
+                        </div>
+                    </div>                      
+                </div>                
+            </div>
+            <p class="input-label">Volatilidade Implícita:</p>
+            <div class="container-fluid" id="alinharConteudo">
+                <div class="control-group">
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <input class="span2" id="inputVol" type="number" step="1">
+                                <span class="add-on"><i><img src="img/percent-icon.png" height="20px" width="20px"></i></span>
+                            </div>
+                        </div>
+                    </div>                      
+                </div>                 
+            </div>    
+            <div class="container-fluid" id="alinharConteudoRight">
+                <div class="control-group">
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <button class="inputBtn" id="calcularOpt" onclick="blackScholes()">Calcular</button>
+                                <input class="span2" id="inputResultadoOpt" type="number" disabled>
+                            </div>
+                        </div>
+                    </div>                      
+                </div>                
+            </div> 
+            <div class="container-fluid" id="blackBar">.</div>
+        </div>       
+        <button onclick="topFunction()" id="btnTopo" title="Go to top"><img src="img/up-arrow-icon.png"></button>
+    </div>
+        <div class="divMenuTopo">
+            <div class="divImagem">
+                <table>
+                    <tr>
+                        <td><a href="index.html"><img src="img/logo.png" alt="logo Optrader" class="imgLogo" ></a></td>
+                        <td><p class="tituloPrincipal">O site do trader do mercado de opções</p></td>
+                    </tr>
+                </table>
+            </div>   
+    <div class="divEscurecer" id="escurecer">.</div>
+    <div class="menuShow" id="menuShow">
+        <div class="divTopo" id="topo"></div>
+        <div class="divMeio" id="meio"></div>
+        <div class="divBaixo" id="baixo"></div>
+    </div>
+    <nav class="menuHide" id="menuHide">
+        <ul>
+            <div class="divCalculadoras">CALCULADORAS</div>
+            <a href="calcPreco.html"><li>Preço da opção</li></a>
+            <a href="porcentagem.html"><li>Porcentagem</li></a>
+            <div class="separador-menu">.</div>
+            <a href="sobre.html"><li id="liSobre">Sobre</li></a>            
+        </ul>
+    </nav>
+</div> 
+</body>
+<footer class="fixarRodape">
+    <p class="autor">Daniel Becker Bortoluzzi | BSI18 | 2020</p>
+</footer>     
+</html>
